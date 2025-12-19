@@ -13,12 +13,7 @@ export default function TopNavbar() {
     const inactivelink = "hover:bg-white hover:text-black";
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="w-full p-4 flex items-center justify-center gap-4"
-        >
+        <div className="absolute top-0 left-0 w-full p-6 flex items-center justify-center gap-4 bg-transparent z-50">
             <LayoutGroup>
                 {[
                     { href: "/", label: "Overview" },
@@ -50,6 +45,6 @@ export default function TopNavbar() {
                     );
                 })}
             </LayoutGroup>
-        </motion.div>
+        </div>
     );
 }
