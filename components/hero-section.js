@@ -6,7 +6,6 @@ export default function HeroSection() {
   return (
     <section className="w-full bg-black">
       
-
       <div className="relative w-full">
         <Image
           src="/banner.png" 
@@ -17,17 +16,16 @@ export default function HeroSection() {
           className="w-full h-auto block" 
           priority
         />
-        
-  
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/70 to-transparent" />
+
+        <div className="absolute bottom-0 left-0 w-full h-3/4 bg-gradient-to-t from-black via-black/90 to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full bg-black text-center px-4 pb-20 -mt-24 md:-mt-32">
+      <div className="relative z-10 w-full bg-transparent text-center px-4 pb-12 sm:pb-20 -mt-20 sm:-mt-32 md:-mt-48">
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-8xl font-light tracking-wide mb-6 text-white"
+          className="text-4xl sm:text-6xl md:text-8xl font-light tracking-wide mb-4 md:mb-6 text-white"
         >
           Swayam Pawar
         </motion.h1>
@@ -36,11 +34,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-md md:text-lg text-zinc-300 md:max-w-3xl mx-auto text-justify font-thin"
+          className="text-base sm:text-lg md:text-xl leading-relaxed text-zinc-300 max-w-sm sm:max-w-2xl md:max-w-5xl mx-auto"
         >
-          I am Swayam Pawar, a freelance model living and working in Mumbai. I enjoy photoshoot sessions in 
-          front of the camera and creating high-quality content for brands. I bring my best to every work 
-          and I am professional in my work. Always ready to collaborate and create impactful visuals.
+          Hi, I'm Swayam Pawar, a dedicated model living right here in Mumbai. I absolutely love getting in front of the camera and transforming through different outfits and styles. I bring a strong work ethic and passion to every shoot, always ready to collaborate and create impactful visuals.
         </motion.p>
       </div>
       
