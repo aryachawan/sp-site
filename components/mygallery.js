@@ -64,32 +64,21 @@ export default function MyGallery() {
             </div>
           </div>
 
-          {/* --- ROW 3: Split Layout (mg6 & mg7 stacked left, mg8 tall right) --- */}
+          {/* --- ROW 3: MODIFIED (mg6 & mg8 Side by Side) --- */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {/* Left Column: Stack of 2 */}
-            <div className="flex flex-col gap-4 md:gap-6">
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-zinc-900 group rounded-lg">
-                <Image
-                  src="/mygallery/mg6.png" 
-                  alt="Gallery Image 6"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-zinc-900 group rounded-lg">
-                <Image
-                  src="/mygallery/mg7.png" 
-                  alt="Gallery Image 7"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
+            {/* Left: mg6 (with object-top fix) */}
+            <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-900 group rounded-lg">
+              <Image
+                src="/mygallery/mg6.png" 
+                alt="Gallery Image 6"
+                fill
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
             
-            {/* Right Column: Full Height Tall Image (mg8) */}
-            <div className="relative aspect-[3/4] md:aspect-auto w-full h-full min-h-[500px] overflow-hidden bg-zinc-900 group rounded-lg">
+            {/* Right: mg8 */}
+            <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-900 group rounded-lg">
               <Image
                 src="/mygallery/mg8.png" 
                 alt="Gallery Image 8"
@@ -144,10 +133,10 @@ export default function MyGallery() {
             </div>
           </div>
 
-          {/* --- ROW 6: Split Layout (mg13 large left, mg14 & mg15 right) --- */}
+          {/* --- ROW 6: MODIFIED (mg13 Left | mg14, mg15, mg7 Right) --- */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {/* Left: Large Image (mg13) */}
-            <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-900 group rounded-lg">
+            {/* Left Column: Large Image (mg13) */}
+            <div className="relative aspect-[3/4] md:h-full w-full overflow-hidden bg-zinc-900 group rounded-lg">
               <Image
                 src="/mygallery/mg13.png" 
                 alt="Gallery Image 13"
@@ -157,24 +146,38 @@ export default function MyGallery() {
               />
             </div>
 
-            {/* Right: 2 Vertical Images side-by-side (mg14, mg15) */}
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
-               <div className="relative aspect-[3/5] w-full overflow-hidden bg-zinc-900 group rounded-lg">
-                  <Image
-                    src="/mygallery/mg14.png" 
-                    alt="Gallery Image 14"
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 25vw"
-                  />
+            {/* Right Column: Stack containing (14+15) and then (mg7) */}
+            <div className="flex flex-col gap-4 md:gap-6">
+               {/* Top: 2 Vertical Images (mg14, mg15) */}
+               <div className="grid grid-cols-2 gap-4 md:gap-6">
+                 <div className="relative aspect-[3/5] w-full overflow-hidden bg-zinc-900 group rounded-lg">
+                    <Image
+                      src="/mygallery/mg14.png" 
+                      alt="Gallery Image 14"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 25vw"
+                    />
+                 </div>
+                 <div className="relative aspect-[3/5] w-full overflow-hidden bg-zinc-900 group rounded-lg">
+                    <Image
+                      src="/mygallery/mg15.png" 
+                      alt="Gallery Image 15"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 25vw"
+                    />
+                 </div>
                </div>
-               <div className="relative aspect-[3/5] w-full overflow-hidden bg-zinc-900 group rounded-lg">
+
+               {/* Bottom: Moved mg7 here as per reference */}
+               <div className="relative aspect-[4/3] w-full overflow-hidden bg-zinc-900 group rounded-lg">
                   <Image
-                    src="/mygallery/mg15.png" 
-                    alt="Gallery Image 15"
+                    src="/mygallery/mg7.png" 
+                    alt="Gallery Image 7"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                </div>
             </div>

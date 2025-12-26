@@ -18,7 +18,8 @@ export default function Contactme() {
     };
 
     return (
-        <div className="w-full flex flex-col items-center justify-center gap-6 pt-32 sm:pt-28 pb-20 px-5 min-h-[80vh]">
+        // ADDED: "bg-black text-white" to ensure the background is always black
+        <div className="w-full bg-black text-white flex flex-col items-center justify-center gap-6 pt-32 sm:pt-28 pb-20 px-5 min-h-[80vh]">
 
             <motion.h1
                 initial={{ opacity: 0, y: 15 }}
